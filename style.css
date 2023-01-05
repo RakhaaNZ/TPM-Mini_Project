@@ -41,7 +41,7 @@ a{
 }
 
 #navbar .container{
-    padding-block: 1.5rem;
+    padding-block: 1rem;
     display: flex;
     justify-content: space-between;
     backdrop-filter: brightness(50%);
@@ -65,6 +65,16 @@ a{
 
 #navbar .container .nav-menu .nav-link .active{
     color: var(--blue);
+}
+
+#linebar {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 107px;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(43, 43, 43, 0.967) 6%, rgb(197, 197, 197) 84%);
 }
 
 #hero-section .container{
@@ -95,7 +105,7 @@ a{
 }
 
 #hero-section .container .hero-image > img{
-    width: 400px;
+    width: 550px;
 }
 
 #hero-section .container .hero-content .lets-talk-btn > a{
@@ -146,7 +156,7 @@ a{
 #service-section .container .service-content{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem 1rem;
+    gap: 3rem 2rem;
 }
 
 #service-section .container .service-content .service-card{
@@ -191,6 +201,7 @@ a{
     justify-content: center;
     font-weight: bold;
     font-size: 48px;
+    margin-bottom: 35px;
 }
 
 #contact-section .container .content {
@@ -219,7 +230,13 @@ a{
 #contact-section .container .content .card form .name {
     display: flex;
     justify-content: space-between;
-    
+}
+
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder{
+    font-weight: 600;
+    font-size: bold;
+    color: var(--blue);
 }
 
 form .name > input {
@@ -228,7 +245,8 @@ form .name > input {
     padding: 10px;
     border: 2px solid white;
     background-color: #CAF0F8;
-    border-radius: 8px;
+    border-radius: 12px;
+    font-weight: 400;
 }
 
 form .email > input {
@@ -237,7 +255,7 @@ form .email > input {
     padding: 10px;
     border: 2px solid white;
     background-color: #CAF0F8;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 form .number > input {
@@ -246,7 +264,7 @@ form .number > input {
     padding: 10px;
     border: 2px solid white;
     background-color: #CAF0F8;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -263,14 +281,37 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 form .gender > input {
-    width: 20px;
-    height: 20px;
-    padding: 10px;
-    color: black;
-    background-color: black;
-    border: 2px solid white;
-    background-color: #CAF0F8;
-    border-radius: 8px;
+    width: 25px;
+    height: 25px;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #48CAE4;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    transform: scale(0);
+    border-radius: 50%;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 25px 25px var(--white);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="radio"]:focus {
+    outline: max(2px) solid var(--white);
+    outline-offset: max(2px, 0.15em);
 }
 
 form > textarea {
@@ -278,26 +319,29 @@ form > textarea {
     padding: 10px;
     border: 2px solid white;
     background-color: #CAF0F8;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
-form .massage {
+form .submit {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-form .massage > input {
+form .submit > input {
     display: flex;
     width: 45%;
     height: 45px;
-    padding: 10px;
+    padding: 15px;
     border: 2px solid white;
     background-color: var(--white);
     color: #90E0EF;
-    border-radius: 8px;
+    border-radius: 24px;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 footer .container {
@@ -357,9 +401,35 @@ footer .container .bottom ul{
     color: white;
 }
 
+.bottom li:hover {
+    transform: scale(1.5);
+    transition: 0.5s ease-in-out;
+    color: #3b5998;
+}
+
+.bottom li:nth-child(2):hover {
+    color: #25D366 !important;
+}
+
+.bottom li:nth-child(3):hover {
+    color: #E1306C !important;
+}
+
+.bottom li:nth-child(4):hover {
+    color: #90E0EF !important;
+}
+
+
+
 footer .container .bottom > p {
     display: flex;
     font-size: 20px;
     font-weight: 300;
     color: var(--white);
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
 }
