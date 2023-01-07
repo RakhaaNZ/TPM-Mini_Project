@@ -357,6 +357,11 @@ form .submit > input {
     cursor: pointer;
 }
 
+form .submit > input:hover {
+    border: 2px solid #18c746;
+    background-color: #18c746;
+}
+
 footer .container {
     width: 100%;
     height: 50vh;
