@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -21,16 +22,31 @@
             <div class="nav-logo">
                 <img src="./assets/nav-logo.png" alt="Nav Logo">
             </div>
+
             <div class="nav-menu">
                 <div class="nav-link">
-                    <a href="#" class="active">Home</a>
-                    <a href="#about-section">About Us</a>
-                    <a href="#service-section">Our Work</a>
+                    <ul>
+                        <li><a href="#hero-section" class="active">Home</a></li>
+                        <li><a href="#about-section">About Us</a></li>
+                        <li><a href="#service-section">Our Work</a></li>
+                        <li>
+                            <div class="primary-btn contact-btn">
+                                <a href="#contact-section">Contact Us</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="primary-btn contact-btn">
-                    <a href="#contact-section">Contact Us</a>
-                </div>
+
+                
+
+                <input type="checkbox" id="checkbar">
+                <label for="checkbar">
+                    <i class="material-symbols-outlined" id="btnav">sort</i>
+                    <i class="material-symbols-outlined" id="close">close</i>
+                </label>
+
             </div>
+
             <div id="linebar"></div>
         </div>
     </nav>
@@ -120,7 +136,7 @@
             
                 <div class="card">
 
-                <form action="" id="form">
+                <form action="" id="form" name="form" onsubmit="return validateForm()">
                     <label for="name">Name</label>
                     <div class="name">
                         <input type="text" name="firstname" id="firstname" placeholder="First Name">
@@ -147,8 +163,8 @@
                         <label for="gender" class="error"></label>
                     </div>
 
-                    <label for="massage">Massage</label>
-                    <textarea name="massage" id="massage" cols="30" rows="10" placeholder="Input Your Massage Here..."></textarea>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="massage" cols="30" rows="10" placeholder="Input Your Massage Here..."></textarea>
                     
                     <div class="submit">
                         <input type="submit" value="Submit">

@@ -7,6 +7,14 @@ window.onscroll = function() {
 };
 
 //Validation Form
+function validateForm() {
+    if (document.forms["form"]["firstname", "lastname", "email", "message"].value == "") {
+        alert("Form cannot be empty");
+        document.forms["form"]["firstname", "lastname", "email", "message"].focus();
+        return false;
+    }
+}
+
 const rules = {
     firstname: {
         required: true,
@@ -23,7 +31,8 @@ const rules = {
     number: {
         required: true
     },
-    gender: "required"
+    gender: "required",
+    message: "required"
 }
 
 const message = {
@@ -40,7 +49,8 @@ const message = {
         email: "Please enter a valid email addres with ''@''"
     },
     number: "Please enter your phone number",
-    gender: "Please select one"
+    gender: "Please select one",
+    message: "Please enter your message"
 }
 
 $(document).ready(function(){
@@ -49,3 +59,4 @@ $(document).ready(function(){
         messages : message
     })
 })
+
